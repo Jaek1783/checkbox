@@ -1,24 +1,28 @@
+.App{
+    display:flex;
+    justify-content: center;
+    padding-top:3rem;
+}
 .card{
     width:30%;
-    height:500px;
-    border-radius:10%;
+    /* height:500px; */
+    padding:3rem;
+    border-radius:15px;
     border:1px solid #000;
-    position: absolute;
-    bottom:200px;
-    left:100px;
+    margin:3rem;
 }
 
 .check{
     display:flex;
-    padding:50px 0;
-    margin:0 50px;
 }
 .checkNum{
     flex-direction: column;
+    padding:3rem 0;
 }
 .all_checked{
     border-bottom:1px solid #000;
     align-items: center;
+    padding-bottom:3rem;
 }
 input[type=checkbox]{
     width:50px;
@@ -32,7 +36,4 @@ button{
     background-color: aqua;
     border:none;
     border-radius:10%;
-    position: absolute;
-    bottom:10px;
-    left:100px;
 }
