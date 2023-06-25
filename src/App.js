@@ -6,6 +6,7 @@ import SelectedItem from './select';
 function App() {
   const checkedRef = useRef(null);
   const checkAllRef = useRef(null);
+  const checkboxesRef = useRef([]);
   const [selected, setSelected] = useState([]);
   let checkedArr = [];
   const checkedNum = ()=>{
@@ -16,8 +17,8 @@ function App() {
       }
     }
     setSelected(checkedArr);
-
   };
+
   const checkedAll = ()=>{
     const check = [...checkedRef.current.children];
 
@@ -26,14 +27,14 @@ function App() {
     }
   };
   const checkedCheck =()=>{
-    const checkboxes = document.querySelectorAll('input[name="checkbox"]');
-    const checked = document.querySelectorAll('input[name="checkbox"]:checked');
-    if(checkboxes.length === checked.length){
+    const checkboxes = checkboxesRef.current;
+    const checked = checkboxes.filter(checkbox => checkbox.checked);    if(checkboxes.length === checked.length){
       checkAllRef.current.checked = true;
     }
     else{
       checkAllRef.current.checked = false;
     }
+
   }
 
   return (
@@ -44,6 +45,7 @@ function App() {
       checkedAll={checkedAll}
       checkedNum={checkedNum}
       checkedCheck={checkedCheck}
+      checkboxesRef ={checkboxesRef}
       />
       <SelectedItem selectedItem={selected}/>
     </div>

@@ -5,7 +5,8 @@ const CheckBox = ({
     checkAllRef,
     checkedAll,
     checkedNum,
-    checkedCheck
+    checkedCheck,
+    checkboxesRef
 })=>{
     return(
         <div className="card">
@@ -14,10 +15,10 @@ const CheckBox = ({
                 <span>모두선택</span>
             </form>
             <form className="check checkNum" ref={checkedRef}>
-                <label><input type="checkbox" name="checkbox" value="1" onChange={checkedCheck}/>1</label>
-                <label><input type="checkbox" name="checkbox" value="2"onChange={checkedCheck}/>2</label>
-                <label><input type="checkbox" name="checkbox" value="3"onChange={checkedCheck}/>3</label>
-                <label><input type="checkbox" name="checkbox" value="4"onChange={checkedCheck}/>4</label>
+                <label><input type="checkbox" name="checkbox" value="1" onChange={checkedCheck} ref={ref => checkboxesRef.current[0] = ref}/>1</label>
+                <label><input type="checkbox" name="checkbox" value="2"onChange={checkedCheck} ref={ref => checkboxesRef.current[1] = ref}/>2</label>
+                <label><input type="checkbox" name="checkbox" value="3"onChange={checkedCheck} ref={ref => checkboxesRef.current[2] = ref}/>3</label>
+                <label><input type="checkbox" name="checkbox" value="4"onChange={checkedCheck} ref={ref => checkboxesRef.current[3] = ref}/>4</label>
             </form>
             <button  onClick={()=>{
                 checkedNum();
