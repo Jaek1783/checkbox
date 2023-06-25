@@ -7,16 +7,22 @@ function App() {
   const checkedRef = useRef(null);
   const checkAllRef = useRef(null);
   const checkboxesRef = useRef([]);
+  const resultRef = useRef([]);
+
   const [selected, setSelected] = useState([]);
   let checkedArr = [];
   const checkedNum = ()=>{
     const check = [...checkedRef.current.children];
     for(let i=0; i<check.length;i++){
       if(check[i].children[0].checked){
-        checkedArr.push(check[i].children[0].value);
+        checkedArr.push(check[i].outerText);
+        check[i].children[0].checked = false;
+        checkAllRef.current.checked = false; // 체크박스 선택 해제
       }
     }
+    // console.log(checkedArr);
     setSelected(checkedArr);
+
   };
 
   const checkedAll = ()=>{
@@ -28,7 +34,8 @@ function App() {
   };
   const checkedCheck =()=>{
     const checkboxes = checkboxesRef.current;
-    const checked = checkboxes.filter(checkbox => checkbox.checked);    if(checkboxes.length === checked.length){
+    const checked = checkboxes.filter(checkbox => checkbox.checked);
+  if(checkboxes.length === checked.length){
       checkAllRef.current.checked = true;
     }
     else{
@@ -47,7 +54,11 @@ function App() {
       checkedCheck={checkedCheck}
       checkboxesRef ={checkboxesRef}
       />
-      <SelectedItem selectedItem={selected}/>
+      <SelectedItem 
+      selected={selected} 
+      setSelected = {setSelected}
+      resultRef={resultRef}
+      />
     </div>
   );
 }
