@@ -5,13 +5,15 @@
 }
 .card{
     width:30%;
-    /* height:500px; */
     padding:3rem;
     border-radius:15px;
     border:1px solid #000;
     margin:3rem;
 }
-
+.card>form{
+    display:flex;
+    flex-direction: column;
+}
 .check{
     display:flex;
 }
