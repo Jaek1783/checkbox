@@ -4,9 +4,9 @@
 1. A 컴포넌트에서 check하여 전송한 내용을 B컴포넌트에서 확인
 2. A 컴포넌트에서 받아온 내용을 B 컴포넌트에서 수정
 
-### A 컴포넌트 && B 컴포넌트
-<img width="300" alt="image" src="https://github.com/Jaek1783/checkbox/assets/73649967/e3dcb131-7fb0-43c3-bc92-da91f1ececd4">
-<img width="300" alt="image" src="https://github.com/Jaek1783/checkbox/assets/73649967/95dc696f-00ad-4945-b9ed-13dff8102498">
+## 주소
+* 코드주소 : https://codesandbox.io/s/cekeubagseu-keomponeonteu-guhyeon-gyqdgw
+* 완성본 : https://gyqdgw.csb.app/
 
 ### 사용 스냅샷
 <img width="600" alt="image" src="https://github.com/Jaek1783/checkbox/assets/73649967/19759986-485d-439b-ae82-311a1918b0db">
